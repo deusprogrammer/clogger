@@ -9,7 +9,7 @@ class UserController {
 	def sessionService
 
     def index() {
-        redirect(action: "list", params: params)
+        chain(action: "list", params: params)
     }
 
     def list(Integer max) {

@@ -23,6 +23,8 @@
 			<table>
 				<thead>
 					<tr>
+					
+						<th></th>
 						
 						<g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Username')}" />
 					
@@ -37,13 +39,15 @@
 				<tbody>
 				<g:each in="${userInstanceList}" status="i" var="userInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
+						<td class="avatar-td"><img width="100px" height="100px" src="${createLink(controller: 'avatar', action: 'get', id: userInstance.avatar.id)}" /></td>
 					
-						<td>${fieldValue(bean: userInstance, field: "userGroup")}</td>
+						<td class="avatar-td"><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
+					
+						<td class="avatar-td">${fieldValue(bean: userInstance, field: "userGroup")}</td>
 						
-						<td>${fieldValue(bean: userInstance, field: "firstName")}</td>
+						<td class="avatar-td">${fieldValue(bean: userInstance, field: "firstName")}</td>
 					
-						<td>${fieldValue(bean: userInstance, field: "lastName")}</td>
+						<td class="avatar-td">${fieldValue(bean: userInstance, field: "lastName")}</td>
 					
 						
 					

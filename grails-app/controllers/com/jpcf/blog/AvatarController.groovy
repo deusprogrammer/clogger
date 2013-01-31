@@ -48,7 +48,7 @@ class AvatarController {
 			return
 		}
 		
-		redirect(controller: "configuration", action: "index")
+		redirect(controller: "avatar", action: "list")
 	}
 
     def show(Long id) {

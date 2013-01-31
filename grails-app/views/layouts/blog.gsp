@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'blog.css')}" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>

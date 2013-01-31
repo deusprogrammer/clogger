@@ -598,3 +598,11 @@ a.skip {
 td.avatar-td {
 	vertical-align: middle;
 }
+
+table.minimal-table {
+	
+}
+
+table.minimal-table td {
+	width: 1px;
+}

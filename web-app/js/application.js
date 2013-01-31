@@ -9,7 +9,10 @@ if (typeof jQuery !== 'undefined') {
 }
 
 $(function() {
-	$("button#avatar-select-button").click(function () {
-		
-	}
+	$("select#avatar-select").change(function () {
+		console.log("SELECTED: " + $(this).val());
+		var id = $(this).val();
+		var baseUrl = $(this).attr("data-baseUrl");
+		$("img#avatar-preview").attr("src", baseUrl + "/" + id);
+	});
 });
