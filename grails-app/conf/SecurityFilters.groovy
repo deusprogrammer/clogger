@@ -2,7 +2,7 @@ import com.jpcf.blog.User
 import com.jpcf.blog.Group
 
 class SecurityFilters {
-	def noRequirements = [blogPost: ["list", "show"], blogReply: [], user: ["create", "save", "login"], avatar: ["get"]]
+	def noRequirements = [blogPost: ["list", "show"], blogReply: [], user: ["create", "save", "login", "logout"], avatar: ["get"]]
 	def loginRequired = [blogPost: [], blogReply: ["create", "save"], user: ["show"], avatar: []]
 	def adminLoginRequired = [blogPost: ["create", "save"], blogReply: [], user: ["list"], avatar: ["index", "list", "show", "create", "save", "edit", "update", "delete"]]
 	def ownershipRequired = [blogPost: ["edit", "update", "delete"], blogReply: ["edit", "update", "delete"], user: ["edit", "update", "delete"], avatar: []]

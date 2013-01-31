@@ -110,5 +110,13 @@ class UserController {
 		} else {
 			session["user"] = null
 		}
+		
+		redirect(url: request.getHeader("referer"))
+		return
+	}
+	
+	def logout() {
+		session["user"] = null
+		chain(controller: "blogPost", action: "list")
 	}
 }
