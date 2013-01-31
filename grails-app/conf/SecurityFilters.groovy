@@ -2,10 +2,10 @@ import com.jpcf.blog.User
 import com.jpcf.blog.Group
 
 class SecurityFilters {
-	def noRequirements = [blogPost: ["list", "show"], blogReply: [], user: ["create", "save", "login", "logout"], avatar: ["get"]]
+	def noRequirements = [blogPost: ["list", "show"], blogReply: [], user: ["list", "show", "create", "save", "login", "logout"], avatar: ["get"]]
 	def loginRequired = [blogPost: [], blogReply: ["create", "save"], user: ["show"], avatar: []]
-	def adminLoginRequired = [blogPost: ["create", "save"], blogReply: [], user: ["list"], avatar: ["index", "list", "show", "create", "save", "edit", "update", "delete"]]
-	def ownershipRequired = [blogPost: ["edit", "update", "delete"], blogReply: ["edit", "update", "delete"], user: ["edit", "update", "delete"], avatar: []]
+	def adminLoginRequired = [blogPost: ["create", "save"], blogReply: [], user: [], avatar: ["index", "list", "create", "save", "edit", "update", "delete"]]
+	def ownershipRequired = [blogPost: ["edit", "update", "delete"], blogReply: ["edit", "update", "delete"], user: ["edit", "update", "delete", "changePassword", "updatePassword"], avatar: []]
 
     def filters = {
         all(controller:'*', action:'*') {

@@ -119,4 +119,35 @@ class UserController {
 		session["user"] = null
 		chain(controller: "blogPost", action: "list")
 	}
+	
+	def changePassword(Long id) {
+		def user = User.get(id)
+		
+		if (!user) {
+			flash.message = "Unable to find user with that id"
+			redirect(action: "list")
+			return
+		}
+		
+		[userInstance: user]
+	}
+	
+	def updatePassword() {
+		def salt = new Date().getTime()
+		def passAndSalt = salt + "--" + params.password
+		def password = passAndSalt.encodeAsMD5()
+		
+		def user = User.get(params.id)
+		
+		if (user) {
+			flash.message = "Successfully changed password!"
+			user.password = password
+			user.salt = salt
+		}
+		else {
+			flash.message = "Password change failed!"
+		}
+		
+		redirect(action: "show", id: user.id)
+	}
 }
