@@ -595,6 +595,14 @@ a.skip {
 	left: -9999px;
 }
 
+table.login-table {
+	
+}
+
+table.login-table tr:hover {
+	
+}
+
 td.avatar-td {
 	vertical-align: middle;
 }
@@ -605,4 +613,8 @@ table.minimal-table {
 
 table.minimal-table td {
 	width: 1px;
+}
+
+div.login-div {
+	background-color: #D6EB99;
 }

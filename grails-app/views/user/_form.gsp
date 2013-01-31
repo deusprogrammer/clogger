@@ -69,7 +69,16 @@
 			<g:select data-baseUrl="${createLink(controller: 'avatar', action: 'get')}" name="avatar.id" id="avatar-select" from="${com.jpcf.blog.Avatar.list()*.name}" keys="${com.jpcf.blog.Avatar.list()*.id}" value="${userInstance?.avatar?.id}"/>
 		</td>
 		<td class="avatar-td">
-			<img width="100px" height="100px" id="avatar-preview" src="${createLink(controller: 'avatar', action: 'get', id:userInstance?.avatar?.id)}" />
+			<% 
+				def avatarId = userInstance?.avatar?.id
+				if (!avatarId) {
+					def avatarList = com.jpcf.blog.Avatar.list()
+					if (avatarList.size > 0) {
+						avatarId = avatarList[0].id
+					}
+				}
+			 %>
+			<img width="100px" height="100px" id="avatar-preview" src="${createLink(controller: 'avatar', action: 'get', id: avatarId)}" />
 		</td>
 	</tr>
 	
