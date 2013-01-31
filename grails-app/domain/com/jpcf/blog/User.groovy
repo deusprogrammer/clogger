@@ -7,8 +7,10 @@ class User {
 	
 	String firstName
 	String lastName
+	String emailAddress
 	
 	Group userGroup
+	Avatar avatar
 	
 	static hasMany = [affiliations: Affiliation, posts: BlogPost, replies: BlogReply]
 	
@@ -21,5 +23,7 @@ class User {
     static constraints = {
 		salt nullable: true
 		username unique: true
+		emailAddress nullable: true, email: true
+		avatar nullable: true
     }
 }

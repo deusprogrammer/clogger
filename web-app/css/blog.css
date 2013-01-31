@@ -28,8 +28,21 @@ div.blog-header-div {
 	border-bottom: 1px solid #007A99;
 }
 
+div.blog-content-container-div {
+	display: table;
+}
+
+div.blog-avatar-div {
+	display: table-cell;
+	vertical-align: top;
+	padding: 10px;
+}
+
 div.blog-content-div {
 	color: white;
+	display: table-cell;
+	vertical-align: top;
+	padding: 10px;
 }
 
 div.blog-reply-div {

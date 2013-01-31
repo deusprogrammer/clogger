@@ -7,3 +7,9 @@ if (typeof jQuery !== 'undefined') {
 		});
 	})(jQuery);
 }
+
+$(function() {
+	$("button#avatar-select-button").click(function () {
+		
+	}
+});

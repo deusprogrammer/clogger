@@ -14,6 +14,14 @@
 	<g:passwordField name="password" value="${userInstance?.password}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'emailAddress', 'error')} ">
+	<label for="emailAddress">
+		<g:message code="user.emailAddress.label" default="Email Address" />
+		
+	</label>
+	<g:textField name="emailAddress" value="${userInstance?.emailAddress}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'firstName', 'error')} ">
 	<label for="firstName">
 		<g:message code="user.firstName.label" default="First Name" />
@@ -28,6 +36,13 @@
 		
 	</label>
 	<g:textField name="lastName" value="${userInstance?.lastName}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'avatar', 'error')}">
+	<label for="userGroup">
+		<g:message code="user.avatar.label" default="Avatar" />
+	</label>
+	<g:select name="avatar.id" from="${com.jpcf.blog.Avatar.list()*.name}" keys="${com.jpcf.blog.Avatar.list()*.id}" value="${userInstance?.avatar?.id}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'userGroup', 'error')} required">
