@@ -132,6 +132,44 @@ class UserController {
 		[userInstance: user]
 	}
 	
+	def promoteTo() {
+		def id = params.id
+		def level = params.level
+		def user
+		
+		if (!id) {
+			println "ID NOT SET"
+			redirect(controller: "error", action: "status404")
+			return
+		}
+		
+		user = User.get(id)
+		
+		if (!user) {
+			println "UNABLE TO FIND USER"
+			redirect(controller: "error", action: "status404")
+			return
+		}
+		
+		switch(level) {
+			case "superuser":
+				user.userGroup = Group.SUPERUSER;
+				break;
+			case "poweruser":
+				user.userGroup = Group.POWERUSER;
+				break;
+			default:
+				println "UNABLE TO FIND LEVEL"
+				redirect(controller: "error", action: "status404")
+				return
+		}
+		
+		user.save();
+		flash.message = "User promoted successfully!"
+		redirect(action: "show", id: user.id)
+		return
+	}
+	
 	def updatePassword() {
 		def salt = new Date().getTime()
 		def passAndSalt = salt + "--" + params.password

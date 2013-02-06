@@ -9,7 +9,7 @@ class User {
 	String lastName
 	String emailAddress
 	
-	Group userGroup
+	Group userGroup = Group.REGISTERED
 	Avatar avatar
 	
 	static hasMany = [affiliations: Affiliation, posts: BlogPost, replies: BlogReply]
