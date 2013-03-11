@@ -1,5 +1,18 @@
 
 <%@ page import="com.jpcf.blog.User" %>
+
+<%
+	def user = null
+	def group = com.jpcf.blog.Group.UNREGISTERED
+	if (session["user"]) {
+		user = User.get(session["user"])
+	}
+	
+	if (user) {
+		group = user.userGroup
+	}
+%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,7 +37,7 @@
 			<ol class="property-list user">
 			
 				<li class="fieldcontain">
-					<img width="100px" height="100px" src="${createLink(controller: 'avatar', action: 'get', id: userInstance.avatar.id)}" />
+					<img width="100px" height="100px" src="${createLink(controller: 'avatar', action: 'get', id: userInstance?.avatar?.id)}" />
 				</li>
 			
 				<g:if test="${userInstance?.username}">
@@ -69,6 +82,14 @@
 					<g:hiddenField name="id" value="${userInstance?.id}" />
 					<g:link class="edit" action="changePassword" id="${userInstance?.id}">Change Password</g:link>
 					<g:link class="edit" action="edit" id="${userInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:if test="${group == com.jpcf.blog.Group.SUPERUSER}">
+						<g:if test="${userInstance?.userGroup == com.jpcf.blog.Group.REGISTERED}">
+							<g:link class="edit" action="promoteTo" id="${userInstance?.id}" params="${[level: 'poweruser']}">Enable Blogging</g:link>
+						</g:if>
+						<g:elseif test="${userInstance?.userGroup == com.jpcf.blog.Group.POWERUSER}">
+							<g:link class="edit" action="promoteTo" id="${userInstance?.id}" params="${[level: 'superuser']}">Promote to Admin</g:link>
+						</g:elseif>
+					</g:if>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>

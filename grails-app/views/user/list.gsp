@@ -39,7 +39,7 @@
 				<tbody>
 				<g:each in="${userInstanceList}" status="i" var="userInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-						<td class="avatar-td"><img width="100px" height="100px" src="${createLink(controller: 'avatar', action: 'get', id: userInstance.avatar.id)}" /></td>
+						<td class="avatar-td"><img width="100px" height="100px" src="${createLink(controller: 'avatar', action: 'get', id: userInstance.avatar?.id)}" /></td>
 					
 						<td class="avatar-td"><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
 					

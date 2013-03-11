@@ -81,16 +81,4 @@
 			<img width="100px" height="100px" id="avatar-preview" src="${createLink(controller: 'avatar', action: 'get', id: avatarId)}" />
 		</td>
 	</tr>
-	
-	<tr>
-		<td>
-			<label for="userGroup">
-				<g:message code="user.userGroup.label" default="Group" />
-				<span class="required-indicator">*</span>
-			</label>
-		</td>
-		<td>
-			<g:select name="userGroup" from="${com.jpcf.blog.Group?.values()}" keys="${com.jpcf.blog.Group.values()*.name()}" required="" value="${userInstance?.userGroup?.name()}"/>
-		</td>
-	</tr>
 </table>
