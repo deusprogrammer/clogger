@@ -7,11 +7,11 @@
 	<div class="blog-replies-div">
 		<% 
 			def replies = post.replies as List
-			def omitted = replies.size
-			if (replies.size > 2) {
+			def omitted = replies.size()
+			if (replies.size() > 2) {
 				replies = replies[0..1]
 			}
-			omitted = omitted - replies.size
+			omitted = omitted - replies.size()
 		%>
 		<g:each in="${replies}" var="reply">
 			<div class="blog-reply-div">
