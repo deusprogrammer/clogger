@@ -15,6 +15,6 @@ class BlogPost {
 	
 	static mapping = {
 		replies sort: 'dateCreated'
-		sort: 'dateCreated'
+		sort 'dateCreated': 'desc'
 	}
 }

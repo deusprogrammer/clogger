@@ -11,7 +11,7 @@
 		<a href="#list-avatar" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="home" controller="blogPost" action="list">Home</g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
@@ -33,7 +33,7 @@
 				<g:each in="${avatarInstanceList}" status="i" var="avatarInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td class="avatar-td">${fieldValue(bean: avatarInstance, field: "name")}</td>
+						<td class="avatar-td"><g:link action="edit" id="${avatarInstance.id}">${fieldValue(bean: avatarInstance, field: "name")}</g:link></td>
 						
 						<td class="avatar-td"><img width="100px" height="100px" src="${createLink(controller: 'avatar', action:'get', id: avatarInstance.id)}" /></td>
 						

@@ -10,7 +10,7 @@
 		<a href="#edit-blogPost" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="home" controller="blogPost" action="list">Home</g:link></li>
 			</ul>
 		</div>
 		<div id="edit-blogPost" class="content scaffold-edit" role="main">
