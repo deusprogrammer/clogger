@@ -91,4 +91,4 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
-avatars.location = "avatars/"
+avatars.location = "/opt/clogger/avatars/"
