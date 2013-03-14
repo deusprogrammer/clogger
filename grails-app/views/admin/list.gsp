@@ -6,9 +6,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <div class="body" style="padding: 10px;">
+  <h4>Admin Menu</h4>
+  <div class="body" style="padding: 10px; position: relative; left: 30px;">
   <ul>
-  	<g:link controller="avatar" action="list">Add/Modify Avatars</g:link>
+  	<li><g:link controller="avatar" action="list">Add/Modify Avatars</g:link></li>
+  	<li><g:link controller="user" action="list">View/Modify Users</g:link></li>
   </ul>
   </div>
 </body>

@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'blogPost.label', default: 'BlogPost')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<title>Create Blog Post</title>
 	</head>
 	<body>
 		<a href="#create-blogPost" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
