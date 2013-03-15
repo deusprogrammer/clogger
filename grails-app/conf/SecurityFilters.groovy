@@ -1,9 +1,9 @@
 import com.jpcf.blog.*
 
 class SecurityFilters {
-	def noRequirements = [blogPost: ["list", "show"], blogReply: [], user: ["list", "show", "create", "save", "login", "logout"], avatar: ["get"]]
+	def noRequirements = [blogPost: ["list", "listByUser", "show"], blogReply: [], user: ["list", "show", "create", "save", "login", "logout"], avatar: ["get"], js: ["summary"]]
 	def loginRequired = [blogPost: [], blogReply: ["create", "save"], user: ["show"], avatar: []]
-	def adminLoginRequired = [blogPost: ["create", "save"], blogReply: [], user: [], avatar: ["index", "list", "create", "save", "edit", "update", "delete"]]
+	def adminLoginRequired = [blogPost: ["create", "save"], blogReply: [], user: [], avatar: ["index", "list", "create", "save", "edit", "update", "delete"], admin: ["list"]]
 	def ownershipRequired = [blogPost: ["edit", "update", "delete"], blogReply: ["edit", "update", "delete"], user: ["edit", "update", "delete", "changePassword", "updatePassword"], avatar: []]
 	
 	def domainMappings = [blogPost: BlogPost.class, blogReply: BlogReply.class, user: User.class, avatar: Avatar.class]

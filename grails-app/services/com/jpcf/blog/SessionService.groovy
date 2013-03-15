@@ -22,6 +22,10 @@ class SessionService {
     }
 	
 	def checkOwnership(def userId, def params) {
+        if (!params.id || !params.id.isNumber()) {
+            return true
+        }
+        
 		def objectId = params.id as Integer
 		
 		def object

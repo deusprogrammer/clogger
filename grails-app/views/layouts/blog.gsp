@@ -20,7 +20,7 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+		<div id="grailsLogo" role="banner" style="vertical-align: middle;"><g:link controller="blogPost" action="list"><img height="100px" src="${resource(dir: 'images', file: 'jpcf-logo.png')}" alt="CBlogger"/></g:link><font size="20px" color="white">CBlogger</font></div>
 		<g:render template="/user/login" />
 		<g:render template="/layouts/navbar" />
 		<g:layoutBody/>

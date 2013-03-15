@@ -14,6 +14,12 @@ class BlogPostController {
         params.max = Math.min(max ?: 10, 100)
         [blogPostInstanceList: BlogPost.list(params), blogPostInstanceTotal: BlogPost.count()]
     }
+    
+    def listByUser(String id) {
+        def user = User.findByUsername(id)
+        def posts = BlogPost.findAllByOwner(user)
+        render(view: "list", model:[blogPostInstanceList: posts, blogPostInstanceTotal: posts.size()])
+    }
 
     def create() {
         [blogPostInstance: new BlogPost(params)]
