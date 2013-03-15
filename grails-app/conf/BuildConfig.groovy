@@ -42,6 +42,9 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.8.0"
         runtime ":resources:1.1.6"
         runtime ":cors:1.0.3"
+		
+		compile ":markdown:1.0.0.RC1"
+		compile ":xss-sanitizer:0.1"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"

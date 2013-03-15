@@ -45,6 +45,29 @@ div.blog-content-div {
 	padding: 10px;
 }
 
+div.blog-content-div li {
+	position: relative;
+	left: 30px;
+}
+
+div.blog-content-div h1,h2,h3,h4,h5,h6 {
+}
+
+div.blog-content-div p {
+}
+
+div.blog-content-div a {
+	text-decoration: none;
+	color: lightgray;
+}
+
+div.blog-content-div a:link,a:active,a:visited {
+}
+
+div.blog-content-div a:hover {
+	color: yellow;
+}
+
 div.blog-reply-div {
 	padding: 10px;
 	margin: 10px;

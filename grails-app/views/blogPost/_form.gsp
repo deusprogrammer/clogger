@@ -13,7 +13,7 @@
 		<g:message code="blogPost.content.label" default="Content" />
 		
 	</label>
-	<g:textArea name="content" cols="40" rows="5" maxlength="4096" value="${blogPostInstance?.content}"/>
+	<g:textArea name="content" cols="40" rows="5" maxlength="4096" value="${blogPostInstance?.content?.replaceAll("<br/>", "\n")}"/>
 </div>
 
 </div>

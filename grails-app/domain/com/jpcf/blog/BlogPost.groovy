@@ -8,18 +8,6 @@ class BlogPost {
 	
 	static belongsTo = [owner: User]
 	static hasMany   = [replies: BlogReply]
-    
-    def beforeSave = {
-        content = content.replaceAll(/<!--.*?-->/, '').replaceAll(/<.*?>/, '').replaceAll("\n", "<br/>")
-    }
-    
-    def beforeInsert = {
-        beforeSave()
-    }
-    
-    def beforeUpdate = {
-        beforeSave()
-    }
 
     static constraints = {
 		content maxSize: 4096

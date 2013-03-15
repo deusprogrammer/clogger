@@ -2,7 +2,7 @@
 	<div class="blog-inner-div">
 		<div class="blog-title-div">${post.title}</div>
 		<div class="blog-header-div">Posted by ${post.owner.username} on ${post.dateCreated}.  Last updated: ${post.lastUpdated}</div>
-		<div class="blog-content-container-div"><div class="blog-avatar-div"><img width="200px" height="200px" src="${createLink(controller: "avatar", action: "get", id: post.owner.avatar?.id)}" /></div><div class="blog-content-div">${post.content}</div></div>
+		<div class="blog-content-container-div"><div class="blog-avatar-div"><img width="200px" height="200px" src="${createLink(controller: "avatar", action: "get", id: post.owner.avatar?.id)}" /></div><div class="blog-content-div"><markdown:renderHtml>${post.content}</markdown:renderHtml></div></div>
 	</div>
 	<div class="blog-replies-div">
 		<g:each in="${post.replies}" var="reply">

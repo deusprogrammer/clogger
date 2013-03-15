@@ -1,11 +1,5 @@
 package com.jpcf.blog
 
-<<<<<<< HEAD
-class JsController {
-	def summary(def poster) {
-		def posts = BlogPost.findAllByOwner(poster)
-	}
-=======
 import grails.converters.JSON
 
 class JsController {
@@ -46,5 +40,4 @@ class JsController {
         
         render blogs as JSON
     }
->>>>>>> 8559a199887c7f2f3e8050e69d956863c056b293
 }
