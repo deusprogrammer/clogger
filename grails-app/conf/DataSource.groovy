@@ -29,6 +29,11 @@ environments {
             url = "jdbc:mysql://localhost/clogger?useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true"
             username = "clogger_prod"
             password = "sethR4chan"
+			properties {
+				validationQuery = "select 1"
+				testWhileIdle = true
+				timeBetweenEvictionRunsMillis = 60000
+			}
         }
     }
 }
